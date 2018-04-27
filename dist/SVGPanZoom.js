@@ -684,7 +684,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                             if (dragStarted) {
                                 var initialMousePosition = getViewBoxCoordinatesFromEvent(svg, event);
                                 var currentMousePosition = getViewBoxCoordinatesFromEvent(svg, event2);
-                                _this3.setViewBox(initialViewBox.x + (initialMousePosition.x - currentMousePosition.x), initialViewBox.y + (initialMousePosition.y - currentMousePosition.y), null, null, 0);
+                                _this3.setViewBox(initialViewBox.x + (initialMousePosition.x - currentMousePosition.x), initialViewBox.y + (initialMousePosition.y - currentMousePosition.y), null, null, 0, 
+                                _this3.options.pan.callback( _this3.getViewBox() ));
                             } else if (scaleStarted) {
                                 var newPinchDistance = touchDistance(event2);
                                 if (newPinchDistance === pinchDistance) {
